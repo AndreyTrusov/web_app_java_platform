@@ -1,0 +1,1 @@
+web_app_java_platform

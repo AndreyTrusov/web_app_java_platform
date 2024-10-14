@@ -35,6 +35,42 @@ Maven - buildovanie a manažovanie (hlavne) Javovských projektov
     -  povieme Maven-u, ktoré dependencies budeme využívať na základe POM.xml
     -  Maven stiahne za nás potrebné JAR súbory a sprístupní tieto JAR súbory počas kompilácie
 
+Anotacia - @SpringBootApplication ( poskytujú doplňujúce informácie o kóde. )
+
+Primárne funkcie Spring kontajnera:
+    - vytvárať a spravovať objekty (Inversion of Control)
+    - “vkladanie závislostí objektom“ (Dependency Injection)
+
+Inversion of Control (IoC):
+    - princíp v softvérovom inžinierstve, ktorý prenáša kontrolu nad
+      objektami alebo časťami programu do kontajnera alebo
+      frameworku
+    - IoC môžeme dosiahnuť prostredníctvom rôznych mechanizmov:
+      • návrhový vzor Strategy, Service locator, Factory
+
+Dependency injection (DI):
+    - ide o mechanizmus, kedy je do našej triedy vložená (injektovaná)
+      inštancia inej triedy
+    - pre prehľadnosť a väčšiu flexibilitu je dobré mať oddelenú
+      konfiguráciu od implementácie
+
+Konfigurácia Spring kontajnera:
+    -  existujú 3 prístupy, ako konfigurovať Spring-ovský kontajner:
+      • pomocou XML súboru (používané najmä v minulosti)
+      • cez Java anotácie (moderný prístup)
+      • cez Javovský zdrojový kód (moderný prístup)
+
+Čo je to Spring Bean? - Javovský objekt (inštancia triedy)
+  
+Typy dependency injections:
+	- Constructor injection
+	- Setter injection
+	- Field injection (používa sa menej)
+
+@Autowired: Označuje, že Spring má automaticky
+injektovať závislosti cez tento konštruktor.
+
+
 
 
 
