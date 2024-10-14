@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78b81e7a-1df7-4846-9616-0d672044d9c8" name="Changes" comment="first commit" />
+    <list default="true" id="78b81e7a-1df7-4846-9616-0d672044d9c8" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/FlyNoWay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/FlyWithWings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/RedheadDuck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/RubberDuck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/Duck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/MallardDuck.java" beforeDir="false" afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/MallardDuck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/MyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/behavior/FlyBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/behavior/FlyBehavior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/behavior/QuackSound.java" beforeDir="false" afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/behavior/QuackSound.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,25 +40,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.Application.executor": "Run",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/aatrusov/ukf/web_java",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/aatrusov/Documents/UKF/web_java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -56,8 +68,12 @@
   </component>
   <component name="RunManager">
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="demo-1" />
+      <classpathModifications>
+        <entry path="$PROJECT_DIR$/p_test" />
+      </classpathModifications>
+      <module name="web_java" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="sk.ukf.demo1.Application" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/p_test" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -82,6 +98,10 @@
       <workItem from="1728891384221" duration="2174000" />
       <workItem from="1728893686927" duration="170000" />
       <workItem from="1728894025187" duration="368000" />
+      <workItem from="1728903143343" duration="15000" />
+      <workItem from="1728903169920" duration="13000" />
+      <workItem from="1728903246268" duration="14000" />
+      <workItem from="1728918720663" duration="1116000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />

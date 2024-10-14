@@ -6,26 +6,26 @@ import org.springframework.stereotype.Component;
 import sk.ukf.duckssimulator.behavior.FlyBehavior;
 import sk.ukf.duckssimulator.behavior.QuackBehavior;
 
-@Component // @Component("mallardDuck")
-public class MallardDuck implements Duck {
+@Component
+public class RedheadDuck implements Duck{
 
     private QuackBehavior quackBehavior;
     private FlyBehavior flyBehavior;
 
-    @Autowired // @Autowired: Označuje, že Spring má automaticky injektovať závislosti cez tento konštruktor.
-    public MallardDuck(@Qualifier("quackSound") QuackBehavior quackBehavior, @Qualifier("flyWithWings") FlyBehavior flyBehavior) {
+    @Autowired
+    public RedheadDuck(@Qualifier("quackSound") QuackBehavior quackBehavior, @Qualifier("flyWithWings") FlyBehavior flyBehavior) {
         this.quackBehavior = quackBehavior;
         this.flyBehavior = flyBehavior;
     }
 
     @Override
     public String display() {
-        return "Zobrazuje sa divá kačica.";
+        return "Tu je";
     }
 
     @Override
     public String swim() {
-        return "Divá kačica pláva.";
+        return "bul-bul-bul";
     }
 
     @Override

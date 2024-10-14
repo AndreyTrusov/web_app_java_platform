@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class QuackSound implements QuackBehavior {
     @Override
     public String quack() {
-        return "Kvákam (je to otravné).";
+        return "Kvákam (nie je to otravné).";
     }
 }

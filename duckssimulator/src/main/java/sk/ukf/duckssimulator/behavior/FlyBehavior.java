@@ -1,4 +1,5 @@
 package sk.ukf.duckssimulator.behavior;
 
-public class FlyBehavior {
+public interface FlyBehavior {
+    String fly();
 }
