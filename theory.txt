@@ -1,0 +1,50 @@
+Java Spring Boot Core
+- Java Spring, Spring Boot, Maven, Inversion of Control, Dependency injection, Java anotácie, Spring Bean
+
+Java Spring Boot REST API
+- REST API, JSON, Hibernate/JPA API, Entity Class, Data Binding,
+- REST CRUD, Controller, Service, DAO, Postman, Validácia dát,
+- Spring Data JPA, Spring Data REST
+
+Java Spring Boot MVC
+- Spring MVC, Thymeleaf, Spring MVC CRUD, Validácia dát,
+- ORM mapovanie, Zabezpečenie, Komplexná Spring Boot MVC aplikácia
+
+Semestrálny projekt
+- na záver: prezentácia projektu pred vyučujúcim s kontrolnými otázkami
+
+# Lesson 1
+
+Vývoj webových aplikácií v Jave
+
+Minulost Webu - servlety a JSP (JavaServer Pages)
+
+Java Spring - open source framework pre vývoj webových aplikácií / alternativa  Java EE
+
+Zahŕňa technológie ako:
+• Aspect-oriented programming (AOP)
+• Dependency injection (DI)
+• Plain Old Java Object (POJO)
+
+Spring Boot ( automatickú konfiguráciu )
+    - Spring Boot nám uľahčí začiatok vo vývoji Spring-ovských webových aplikácií
+    - zabudovaný webový server (Tomcat)
+    -  pomáha riešiť konflikty dependencies pomocou Maven alebo Gradle
+
+Maven - buildovanie a manažovanie (hlavne) Javovských projektov
+    -  povieme Maven-u, ktoré dependencies budeme využívať na základe POM.xml
+    -  Maven stiahne za nás potrebné JAR súbory a sprístupní tieto JAR súbory počas kompilácie
+
+
+
+
+
+
+
+
+
+
+
+
+
+
