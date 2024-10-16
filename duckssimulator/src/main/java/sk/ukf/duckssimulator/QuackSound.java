@@ -1,6 +1,7 @@
-package sk.ukf.duckssimulator.behavior;
+package sk.ukf.duckssimulator;
 
 import org.springframework.stereotype.Component;
+import sk.ukf.duckssimulator.behavior.QuackBehavior;
 
 @Component
 public class QuackSound implements QuackBehavior {

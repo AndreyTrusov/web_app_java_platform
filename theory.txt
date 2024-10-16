@@ -70,16 +70,99 @@ Typy dependency injections:
 @Autowired: Označuje, že Spring má automaticky
 injektovať závislosti cez tento konštruktor.
 
+Singleton– “Jedináčik“
+@Scope("singleton")
+- vytvori len jednu instanciju
+- vsetky poziadavky vratia jeden object
+- akekolvek upravy sa prejavia vo vsetkych odkazoch
+
+Prototype - creates new bean for every container request ( opak ako keby singletonu )
+
+Life circle:
+
+Container started - Bean instantiated - Dependency injection - Internal Spring process
+- My Init methods - Bean is ready for use  - container shut down - My Destroy Method - Stop
+
+@PostConstruct
+public void init(){}
+
+@PostConstruct
+public void destroy(){}
+
+volanie inicializačných / ukončujúcich metód / nastavovanie / ukončenie spojení DB, socketov, súborov,
+
+@Component sa používa na automatickú detekciu a konfiguráciu Bean-u pomocou skenovania tried
+• medzi anotovanou triedou a Bean-om existuje implicitné mapovanie 1:1
+• predstavme si, že chceme prepojiť komponenty z knižníc tretích strán
+(nemáme zdrojový kód, takže nemôžeme anotovať jeho triedy pomocou
+@Component), takže automatická konfigurácia nie je možná
+
+Vytvorenie konfig. súboru a definovanie Bean-ov:
+@Configuration
+public class name {
+    @Bean
+    public FlyBehavior fly...(){}
+}
+Takymto sposobom odstránili sme nepotrebné anotácie v constructore...
+
+----
+Rest API - REpresentational State Transfer (API) Applicaion Programming Interface
+- je architektonický štýl, ktorý definuje súbor obmedzení, ktoré sa majú použiť na vytváranie webových služieb
+- je spôsob prístupu k webovým službám jednoduchým a flexibilným spôsobom bez akéhokoľvek spracovania
+-  používa sa na načítanie alebo poskytnutie údajov z webovej služby, pričom celá komunikácia prebieha iba na základe HTTP požiadavky
+
+JSON - avaScript Object Notation - je najpopulárnejším formátom používaným vo webových službách.
+
+Post (create) / Get (read) / Put (update) / Delete
+Codes:
+100 - information
+200 - Successful
+300 - Redirection
+400 - Client error
+500 - Server error
+
+Hibernate - framework na uchovávanie / ukladanie Java objektov v databáze
+HQL - Hibernate Query Language - (ORM) - object relation mapping
+- pomotou HQL Java class is mapped on database table.
+
+JPA API - Java language Standard allowing us to map object into database
+Application.properties - sa používa na zápis application-related properties ( MySql )
+ -  obsahuje konfiguráciu, ktorá je potrebná na spustenie DB aplikácie
+ spring.application.name=restapi
+ spring.datasource.url=jdbc:mysql://localhost:3306/student_directory
+ spring.datasource.username=root
+ spring.datasource.password=
 
 
+!!! Tvojvrstvova architektura:
+
+REST Client - Student REST controller - Student service - Student DAO ( Data Access Object ) - Database
+DAO - Student DAO - Entity Manager - Data Source - Database
+ - DAO slúži výlučne na zabezpečenie pripojenia k DB
+
+Service vrstva poskytuje logiku a bezpecnost na prácu s dátami odosielanými do a z DAO vrstvy
 
 
+-----
 
+Anotácia @Repository označuje triedu ako bean komponent, ktorý pracuje s dátovou vrstvou. Použitím anotácie @Autowired
+Spring automaticky injektuje EntityManager-a pomocou konštruktora. Potom vytvárame dotaz TypedQuery pre entitu
+Student pomocou JPQL, ktorý nám vráti zoznam študentov.
 
+Anotácia @Service sa používa v Service vrstve a tiež ňou Spring označí triedu ako bean
+komponent, čo mu umožní túto triedu automaticky detegovať a spravovať.
 
+Anotácia @RestController označuje triedu ako REST kontrolér, čo znamená, že bude spracovávať HTTP požiadavky a vracať HTTP odpovede.
 
+Anotácia @RequestMapping("/api") určuje základnú URL cestu pre všetky HTTP požiadavky spracované touto triedou.
 
+Anotácia @GetMapping("/students") určuje, že táto metóda bude spracovávať HTTP GET požiadavky na URL
+/api/students. A metóda vracia zoznam všetkých študentov.
 
+-----
+
+POJO (Plain Old Java Object)
+Jackson knižnicu na pozadí, ktorá volá príslušné getter / setter metódy
 
 
 

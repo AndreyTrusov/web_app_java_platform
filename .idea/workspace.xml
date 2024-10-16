@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78b81e7a-1df7-4846-9616-0d672044d9c8" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/FlyNoWay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/FlyWithWings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/RedheadDuck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/RubberDuck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/dao/EmployeeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/dao/EmployeeDAOJpaImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/entity/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/rest/EmployeeRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/service/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/service/EmployeeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/Duck.java" beforeDir="false" afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/Duck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/MallardDuck.java" beforeDir="false" afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/MallardDuck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/MyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/MyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/behavior/FlyBehavior.java" beforeDir="false" afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/behavior/FlyBehavior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/behavior/QuackSound.java" beforeDir="false" afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/behavior/QuackSound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/behavior/QuackSound.java" beforeDir="false" afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/QuackSound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/theory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/theory.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +101,9 @@
       <workItem from="1728903169920" duration="13000" />
       <workItem from="1728903246268" duration="14000" />
       <workItem from="1728918720663" duration="1116000" />
+      <workItem from="1728921124042" duration="105000" />
+      <workItem from="1728975412387" duration="824000" />
+      <workItem from="1729068269039" duration="3435000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
