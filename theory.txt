@@ -164,6 +164,20 @@ Anotácia @GetMapping("/students") určuje, že táto metóda bude spracovávať
 POJO (Plain Old Java Object)
 Jackson knižnicu na pozadí, ktorá volá príslušné getter / setter metódy
 
+-----
+
+CRUD metody v JPA
+ - save() - uklada object
+ - findById() - najde intinu podla jej ID
+ - findAll() - vrati zoznam vsetkych entin v databse
+ - delete() - odstrani entitnu podla id alebo objectu
+ - deleteAll() - odstrani vsetky entity z databazy
+ - findByLastName() - vlastna metoda ( vies vytvorit plno dialsich metod )
+
+-----
+
+@RequestBody mapuje odoslané dáta z HTTP Request-u na Java objekt.
+
 
 
 

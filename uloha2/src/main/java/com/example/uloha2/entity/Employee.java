@@ -1,12 +1,10 @@
 package com.example.uloha2.entity;
 
 import jakarta.persistence.*;
-import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Optional;
 
 @Entity
 @Table(name = "employee")
@@ -14,7 +12,7 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Long id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -44,7 +42,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int id, String firstName, String lastName, LocalDate birthDate, String email, String phone, String jobTitle, @Nullable BigDecimal salary, Boolean fullTime) {
+    public Employee(Long id, String firstName, String lastName, LocalDate birthDate, String email, String phone, String jobTitle, @Nullable BigDecimal salary, Boolean fullTime) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -56,11 +54,11 @@ public class Employee {
         this.fullTime = fullTime;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
