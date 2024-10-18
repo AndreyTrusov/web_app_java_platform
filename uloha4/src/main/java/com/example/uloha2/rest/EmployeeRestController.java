@@ -34,7 +34,7 @@ public class EmployeeRestController {
     }
 
     @PostMapping("/employee")
-    public ResponseEntity<Object> addEmployee(@Valid @RequestBody Employee employee, BindingResult bindingResult) {
+    public ResponseEntity<Object> addEmployee(@RequestBody @Valid Employee employee, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
 
             StringBuilder errors = new StringBuilder();

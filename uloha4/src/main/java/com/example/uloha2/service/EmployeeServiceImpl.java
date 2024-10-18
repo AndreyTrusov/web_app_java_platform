@@ -1,59 +1,65 @@
 package com.example.uloha2.service;
 
-import com.example.uloha2.dao.EmployeeDAO;
+import com.example.uloha2.dao.EmployeeRepository;
 import com.example.uloha2.entity.Employee;
-import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-    private EmployeeDAO employeeDAO;
+    private EmployeeRepository employeeRepository;
 
     @Autowired
-    public EmployeeServiceImpl(EmployeeDAO employeeDAO) {
-        this.employeeDAO = employeeDAO;
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
     }
 
     @Override
     public List<Employee> findAll() {
-        return employeeDAO.findAll();
+        return employeeRepository.findAll();
     }
 
     @Override
     public Employee findById(Long id) {
-        Employee employee = employeeDAO.findById(id);
-
-        if (employee == null) {
-            throw new RuntimeException("Employee with ID " + id + " not found.");
+        if (id == null || id <= 0) {
+            throw new IllegalArgumentException("Invalid ID");
         }
 
-        return employee;
+        // null values
+        Optional<Employee> employee = employeeRepository.findById(id);
+
+        return employee.orElseThrow(() ->
+                new RuntimeException("Employee with ID " + id + " not found."));
     }
 
     @Transactional
     @Override
     public Employee save(Employee employee) {
-        return employeeDAO.save(employee);
+        if (employee == null) {
+            throw new IllegalArgumentException("Employee object cannot be null");
+        }
+        return employeeRepository.save(employee);
     }
 
     @Transactional
-    @Override
     public boolean deleteById(Long id) {
         if (id == null || id <= 0) {
             throw new IllegalArgumentException("Invalid ID");
         }
 
-        boolean isDeleted = employeeDAO.deleteById(id);
+        boolean exists = employeeRepository.existsById(id);
 
-        if (isDeleted) { // log logic
+        if (exists) {
+            employeeRepository.deleteById(id);
             System.out.println("Employee with ID " + id + " deleted successfully.");
+            return true;
         } else {
             System.out.println("Employee with ID " + id + " not found.");
+            return false;
         }
-
-        return isDeleted;
     }
 }
