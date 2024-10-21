@@ -1,9 +1,7 @@
 package com.example.uloha2.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import org.springframework.lang.Nullable;
 
 import java.math.BigDecimal;
@@ -41,9 +39,9 @@ public class Employee {
     @Column(name = "job_title")
     private String jobTitle;
 
-    @NotBlank(message = "Salary is required")
+    @NotNull(message = "Salary cannot be null")
     @Column(name = "salary")
-    @Nullable
+    @Min(value = 0, message = "Salary must be greater than or equal to 0")
     private BigDecimal salary;
 
     @Column(name = "full_time")

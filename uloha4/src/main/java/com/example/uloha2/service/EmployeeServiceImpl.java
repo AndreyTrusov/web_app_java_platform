@@ -11,11 +11,17 @@ import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
+
     private EmployeeRepository employeeRepository;
 
     @Autowired
     public EmployeeServiceImpl(EmployeeRepository employeeRepository) {
         this.employeeRepository = employeeRepository;
+    }
+
+    @Override
+    public List<Employee> gerSortedEmployee(){
+        return employeeRepository.findAllByOrderByLastNameAsc();
     }
 
     @Override
@@ -29,11 +35,8 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new IllegalArgumentException("Invalid ID");
         }
 
-        // null values
-        Optional<Employee> employee = employeeRepository.findById(id);
-
-        return employee.orElseThrow(() ->
-                new RuntimeException("Employee with ID " + id + " not found."));
+        return employeeRepository.findById(id)
+                .orElse(null);
     }
 
     @Transactional

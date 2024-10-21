@@ -3,6 +3,7 @@ package com.example.uloha2.rest;
 import com.example.uloha2.entity.Employee;
 import com.example.uloha2.entity.ResponseStatus;
 import com.example.uloha2.service.EmployeeService;
+import com.example.uloha2.service.EmployeeServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,11 +17,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class EmployeeRestController {
+    private final EmployeeServiceImpl employeeServiceImpl;
     private EmployeeService employeeService;
 
     @Autowired
-    public EmployeeRestController(EmployeeService employeeService) {
+    public EmployeeRestController(EmployeeService employeeService, EmployeeServiceImpl employeeServiceImpl) {
         this.employeeService = employeeService;
+        this.employeeServiceImpl = employeeServiceImpl;
     }
 
     @GetMapping("/employee")
@@ -47,7 +50,8 @@ public class EmployeeRestController {
             return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
         }
         employee.setId(0L);
-        Employee save = employeeService.save(employee);
+        employeeService.save(employee);
+
         ResponseStatus successResponse = new ResponseStatus(HttpStatus.OK.value(),"Student added successfully", System.currentTimeMillis());
         return new ResponseEntity<>(successResponse, HttpStatus.OK);
     }
@@ -56,7 +60,8 @@ public class EmployeeRestController {
     public ResponseEntity<Object> getEmployee(@PathVariable Long id) {
         Employee employee = employeeService.findById(id);
         if (employee == null) {
-            ResponseStatus errorResponse = new ResponseStatus(HttpStatus.NOT_FOUND.value(), "Employee not found", System.currentTimeMillis());
+            ResponseStatus errorResponse = new ResponseStatus(HttpStatus.NOT_FOUND.value(),
+                    "Employee not found", System.currentTimeMillis());
             return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(employee, HttpStatus.OK);
@@ -101,5 +106,10 @@ public class EmployeeRestController {
             ResponseStatus errorResponse = new ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Failed to delete employee", System.currentTimeMillis());
             return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+    @GetMapping("/employees/sorted")
+    public List<Employee> getEmployeeSorted() {
+        return employeeServiceImpl.gerSortedEmployee();
     }
 }

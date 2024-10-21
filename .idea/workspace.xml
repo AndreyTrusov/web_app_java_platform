@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78b81e7a-1df7-4846-9616-0d672044d9c8" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/dao/EmployeeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/dao/EmployeeDAOJpaImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/entity/Employee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/rest/EmployeeRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/service/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/service/EmployeeServiceImpl.java" afterDir="false" />
+    <list default="true" id="78b81e7a-1df7-4846-9616-0d672044d9c8" name="Changes" comment="DU3 - post / delete / put / get by id ( controller )">
+      <change afterPath="$PROJECT_DIR$/uloha2/uloha3_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uloha2/uloha3_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uloha2/uloha3_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uloha2/uloha3_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uloha2/uloha3_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/uloha2/uloha3_6.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/behavior/QuackSound.java" beforeDir="false" afterPath="$PROJECT_DIR$/duckssimulator/src/main/java/sk/ukf/duckssimulator/QuackSound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/theory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/theory.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha2/Screenshot 2024-10-16 at 11.50.03.png" beforeDir="false" afterPath="$PROJECT_DIR$/uloha2/uloha2_1.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +45,7 @@
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -60,6 +60,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/p_test" />
@@ -103,7 +106,11 @@
       <workItem from="1728918720663" duration="1116000" />
       <workItem from="1728921124042" duration="105000" />
       <workItem from="1728975412387" duration="824000" />
-      <workItem from="1729068269039" duration="3435000" />
+      <workItem from="1729068269039" duration="3783000" />
+      <workItem from="1729077607640" duration="593000" />
+      <workItem from="1729078352564" duration="1885000" />
+      <workItem from="1729088207960" duration="163000" />
+      <workItem from="1729242180006" duration="1023000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -113,7 +120,23 @@
       <option name="project" value="LOCAL" />
       <updated>1728892490674</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="DU2 - Java API - DAO - service - controller">
+      <option name="closed" value="true" />
+      <created>1729072403122</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729072403122</updated>
+    </task>
+    <task id="LOCAL-00003" summary="DU3 - post / delete / put / get by id ( controller )">
+      <option name="closed" value="true" />
+      <created>1729088359795</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729088359795</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,7 +155,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="DU2 - Java API - DAO - service - controller" />
+    <MESSAGE value="DU3 - post / delete / put / get by id ( controller )" />
+    <option name="LAST_COMMIT_MESSAGE" value="DU3 - post / delete / put / get by id ( controller )" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
