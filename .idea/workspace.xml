@@ -4,15 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78b81e7a-1df7-4846-9616-0d672044d9c8" name="Changes" comment="DU3 - post / delete / put / get by id ( controller )">
+    <list default="true" id="78b81e7a-1df7-4846-9616-0d672044d9c8" name="Changes" comment="created base to start implementing home work">
       <change afterPath="$PROJECT_DIR$/uloha2/uloha3_1.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uloha2/uloha3_2.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uloha2/uloha3_3.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uloha2/uloha3_4.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uloha2/uloha3_5.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/uloha2/uloha3_6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uloha2/Screenshot 2024-10-16 at 11.50.03.png" beforeDir="false" afterPath="$PROJECT_DIR$/uloha2/uloha2_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/uloha2/src/main/java/com/example/uloha2/entity/Employee_old.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha4/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/uloha4/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha4/src/main/java/com/example/uloha2/dao/EmployeeDAOJpaImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/uloha4/src/main/java/com/example/uloha2/dao/EmployeeDAOJpaImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha5/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha5/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha5/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha5/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha5/src/main/java/wt/demo/Uloha5Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha5/src/main/resources/templates/students/form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha5/src/main/resources/templates/students/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha5/src/main/resources/templates/students/view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/uloha5/src/test/java/wt/demo/Uloha5ApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +60,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Uloha2Application.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Uloha5Application.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/aatrusov/Documents/UKF/web_java&quot;,
@@ -55,20 +70,34 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/uloha5/demo/src/main/java/wt/demo/dao" />
+      <recent name="$PROJECT_DIR$/uloha5/src/main/java/wt/demo/entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/uloha5/demo" />
+      <recent name="$PROJECT_DIR$/uloha5" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/p_test" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Uloha2Application">
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <classpathModifications>
         <entry path="$PROJECT_DIR$/p_test" />
@@ -76,6 +105,22 @@
       <module name="web_java" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="sk.ukf.demo1.Application" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/p_test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Uloha2Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="web_java" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.uloha4.Uloha2Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Uloha5Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="wt.demo.Uloha5Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,6 +156,11 @@
       <workItem from="1729078352564" duration="1885000" />
       <workItem from="1729088207960" duration="163000" />
       <workItem from="1729242180006" duration="1023000" />
+      <workItem from="1729847179686" duration="4539000" />
+      <workItem from="1729857509185" duration="1470000" />
+      <workItem from="1729941833532" duration="923000" />
+      <workItem from="1730284265338" duration="404000" />
+      <workItem from="1730284821261" duration="601000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -136,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729088359795</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="created base to start implementing home work">
+      <option name="closed" value="true" />
+      <created>1729850559788</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1729850559788</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,7 +215,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="DU2 - Java API - DAO - service - controller" />
     <MESSAGE value="DU3 - post / delete / put / get by id ( controller )" />
-    <option name="LAST_COMMIT_MESSAGE" value="DU3 - post / delete / put / get by id ( controller )" />
+    <MESSAGE value="created base to start implementing home work" />
+    <option name="LAST_COMMIT_MESSAGE" value="created base to start implementing home work" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,4 +1,4 @@
-package wt.demo;
+package com.homework.uloha5;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
