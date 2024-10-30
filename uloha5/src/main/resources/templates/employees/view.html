@@ -11,11 +11,72 @@
     <title>Employee Detail</title>
     <style>
         body {
-            padding-top: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding-top: 30px;
+        }
+
+        .container {
+            max-width: 700px;
         }
 
         .header {
+            text-align: center;
             margin-bottom: 20px;
+            color: #343a40;
+        }
+
+        .header h2 {
+            font-weight: 700;
+            color: #343a40;
+        }
+
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 20px 30px;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: #495057;
+        }
+
+        .card-text strong {
+            color: #6c757d;
+        }
+
+        .card-footer {
+            background-color: #f1f1f1;
+            border-top: none;
+            text-align: right;
+        }
+
+        .btn-secondary, .btn-warning, .btn-danger {
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -48,12 +109,12 @@
         </div>
         <div class="card-footer">
             <a th:href="@{/employees/list}" class="btn btn-secondary">Späť na zoznam</a>
-            <form th:action="@{/employees/form/update}" method="get" class="d-inline">
-                <input type="hidden" name="employeeId" th:value="${employee.id}"/>
-                <button type="submit" class="btn btn-warning" title="Update">
-                    <i class="fas fa-edit"></i> Upraviť
-                </button>
-            </form>
+<!--            <form th:action="@{/employees/form/update}" method="get" class="d-inline">-->
+<!--                <input type="hidden" name="employeeId" th:value="${employee.id}"/>-->
+<!--                <button type="submit" class="btn btn-warning" title="Update">-->
+<!--                    <i class="fas fa-edit"></i> Upraviť-->
+<!--                </button>-->
+<!--            </form>-->
             <form th:action="@{/employees/delete}" method="get" class="d-inline">
                 <input type="hidden" name="employeeId" th:value="${employee.id}"/>
                 <button type="submit" class="btn btn-danger" title="Delete"
