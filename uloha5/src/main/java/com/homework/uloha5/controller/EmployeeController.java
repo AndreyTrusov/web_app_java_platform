@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/employees")
@@ -38,35 +39,29 @@ public class EmployeeController {
     @GetMapping("/view")
     public String viewEmployees(@RequestParam("employeeId") Long id, Model model) {
 
-        Employee employee = employeeService.findById(id);
+        Optional<Employee> employeeOpt = employeeService.findById(id);
 
-        System.out.println("Retrieved employee: " + employee);
-
-        if (employee == null) {
+        if (employeeOpt.isPresent()) {
+            model.addAttribute("employee", employeeOpt.get());
+            return "employees/view";
+        } else {
             model.addAttribute("errorMessage", "Employee not found.");
             return "error";
         }
-
-        model.addAttribute("employee", employee);
-
-        return "employees/view";
     }
 
     @GetMapping("/delete")
     public String deleteEmployee(@RequestParam("employeeId") Long id, Model model) {
 
         employeeService.deleteById(id);
-
-        return "redirect:/employees/list";
+        return "redirect:/employees/list?deleted=true";
 
     }
 
     @GetMapping("/form/add")
     public String showFormForAdd(Model model) {
-        Employee employee = new Employee();
-        List<String> jobTitleList = Arrays.asList(jobTitles.split(","));
-        model.addAttribute("employee", employee);
-        model.addAttribute("jobTitleList", jobTitleList);
+        model.addAttribute("employee", new Employee());
+        model.addAttribute("jobTitleList", getJobTitleList());
         return "employees/form";
     }
 
@@ -81,5 +76,9 @@ public class EmployeeController {
     @PostMapping("/processForm")
     public String processForm(@ModelAttribute("employee") Employee employee){
         return "employee-confirmation";
+    }
+
+    private List<String> getJobTitleList() {
+        return Arrays.asList(jobTitles.split(","));
     }
 }
