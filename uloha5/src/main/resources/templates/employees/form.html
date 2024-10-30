@@ -25,13 +25,13 @@
 <div class="container">
 
     <div class="header">
-        <h2>UBIAN - Pridať nového študenta</h2>
+        <h2>UBIAN - Pridať nového employee</h2>
     </div>
 
-    <form th:action="@{/students/save}" th:object="${student}" method="post">
+    <form th:action="@{/employees/save}" th:object="${employee}" method="post">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Informácie o študentovi</h5>
+                <h5 class="card-title">Informácie o employee</h5>
 
                 <div class="row mb-3">
                     <div class="col-md-6">
@@ -84,7 +84,7 @@
 
             </div>
             <div class="card-footer">
-                <a th:href="@{/students/list}" class="btn btn-secondary">Späť na zoznam</a>
+                <a th:href="@{/employees/list}" class="btn btn-secondary">Späť na zoznam</a>
                 <button type="submit" class="btn btn-primary">Pridať študenta</button>
             </div>
         </div>

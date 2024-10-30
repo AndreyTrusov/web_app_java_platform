@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/employee")
+@RequestMapping("/employees")
 public class EmployeeController {
 
     private EmployeeService employeeService;
@@ -20,20 +20,27 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @GetMapping
+    @GetMapping("/list")
     public String listEmployee(Model model) {
 
-        List<Employee> employess = employeeService.findAll();
+        List<Employee> employees = employeeService.findAll();
 
-        model.addAttribute("employees", employess);
+        model.addAttribute("employees", employees);
 
         return "employees/list";
     }
 
-    @GetMapping("/list")
+    @GetMapping("/view")
     public String viewEmployees(@RequestParam("employeeId") Long id, Model model) {
 
         Employee employee = employeeService.findById(id);
+
+        System.out.println("Retrieved employee: " + employee);
+
+        if (employee == null) {
+            model.addAttribute("errorMessage", "Employee not found.");
+            return "error";
+        }
 
         model.addAttribute("employee", employee);
 

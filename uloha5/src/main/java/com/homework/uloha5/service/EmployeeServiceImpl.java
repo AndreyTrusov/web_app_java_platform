@@ -35,11 +35,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
 
         return employeeRepository.findById(id)
-                .orElse(null);
+                .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
     }
 
-    @Transactional
     @Override
+    @Transactional
     public Employee save(Employee employee) {
         if (employee == null) {
             throw new IllegalArgumentException("Employee object cannot be null");
@@ -47,6 +47,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         return employeeRepository.save(employee);
     }
 
+    @Override
     @Transactional
     public boolean deleteById(Long id) {
         if (id == null || id <= 0) {
