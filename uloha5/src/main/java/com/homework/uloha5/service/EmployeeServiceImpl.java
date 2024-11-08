@@ -35,8 +35,8 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new IllegalArgumentException("Invalid ID");
         }
 
-        return employeeRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Student not found with id: " + id));
+        return Optional.ofNullable(employeeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Student not found with id: " + id)));
     }
 
     @Override

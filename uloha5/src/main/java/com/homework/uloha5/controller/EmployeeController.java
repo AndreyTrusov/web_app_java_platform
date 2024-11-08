@@ -43,6 +43,7 @@ public class EmployeeController {
 
         if (employeeOpt.isPresent()) {
             model.addAttribute("employee", employeeOpt.get());
+            model.addAttribute("jobTitleList", getJobTitleList());
             return "employees/view";
         } else {
             model.addAttribute("errorMessage", "Employee not found.");
@@ -63,6 +64,21 @@ public class EmployeeController {
         model.addAttribute("employee", new Employee());
         model.addAttribute("jobTitleList", getJobTitleList());
         return "employees/form";
+    }
+
+    @GetMapping("/form/update")
+    public String showFormForUpdate(@RequestParam("employeeId") Long id, Model model) {
+
+        Optional<Employee> employeeOpt = employeeService.findById(id);
+
+        if (employeeOpt.isPresent()) {
+            model.addAttribute("employee", employeeOpt.get());
+            model.addAttribute("jobTitleList", getJobTitleList());
+            return "employees/form";
+        } else {
+            model.addAttribute("errorMessage", "Employee not found.");
+            return "error";
+        }
     }
 
     @PostMapping("/save")

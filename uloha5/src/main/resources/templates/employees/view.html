@@ -86,45 +86,52 @@
 <div class="container">
 
     <div class="header">
-        <h2>UBIAN - Detail Employee</h2>
+        <h2 th:text="${employee.id} != 0 ? 'UBIAN - Upraviť existujúceho Employee' : 'UBIAN - Pridať nového Employee'"></h2>
     </div>
 
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Informácie o zamestnancovi</h5>
-            <p class="card-text"><strong>ID:</strong> <span th:text="${employee.id}"></span></p>
-            <p class="card-text"><strong>Meno:</strong> <span th:text="${employee.firstName}"></span></p>
-            <p class="card-text"><strong>Priezvisko:</strong> <span th:text="${employee.lastName}"></span></p>
+<!--    <form th:action="@{/employee/save}" th:object="${employee}" method="post">-->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Informácie o zamestnancovi</h5>
+
+<!--                <input type="hidden" th:field="*{employee.id}"/>-->
+
+                <p class="card-text"><strong>ID:</strong> <span th:text="${employee.id}"></span></p>
+                <p class="card-text"><strong>Meno:</strong> <span th:text="${employee.firstName}"></span></p>
+                <p class="card-text"><strong>Priezvisko:</strong> <span th:text="${employee.lastName}"></span></p>
                 <!--                <span th:text="${#dates.format(employee.birthDate, 'dd. MM. yyyy')}"></span>-->
-<!--                <span th:text="${mployee.birthDate}"></span>-->
-            <p class="card-text"><strong>Dátum narodenia:</strong>
-                <span th:text="${employee.birthDate != null ? employee.birthDate : 'N/A'}"></span>
-            </p>
-            <p class="card-text"><strong>Email:</strong> <span th:text="${employee.email}"></span></p>
-            <p class="card-text"><strong>Telefón:</strong> <span th:text="${employee.phone}"></span></p>
-            <p class="card-text"><strong>Pozícia:</strong> <span th:text="${employee.jobTitle}"></span></p>
-            <p class="card-text"><strong>Plat:</strong> <span th:text="${employee.salary}"></span>€</p>
-            <p class="card-text"><strong>Úväzok:</strong> <span
-                    th:text="${employee.fullTime} ? 'Plný úväzok' : 'Čiastočný úväzok'"></span></p>
+                <!--                <span th:text="${mployee.birthDate}"></span>-->
+                <p class="card-text"><strong>Dátum narodenia:</strong>
+                    <span th:text="${employee.birthDate != null ? employee.birthDate : 'N/A'}"></span>
+                </p>
+                <p class="card-text"><strong>Email:</strong> <span th:text="${employee.email}"></span></p>
+                <p class="card-text"><strong>Telefón:</strong> <span th:text="${employee.phone}"></span></p>
+                <p class="card-text"><strong>Pozícia:</strong> <span th:text="${employee.jobTitle}"></span></p>
+                <p class="card-text"><strong>Plat:</strong> <span th:text="${employee.salary}"></span>€</p>
+                <p class="card-text"><strong>Úväzok:</strong> <span
+                        th:text="${employee.fullTime == 0 ? 'Plný úväzok'
+                 : (employee.fullTime == 1 ? 'Čiastočný úväzok'
+                 : (employee.fullTime == 2 ? 'Dohoda'
+                 : 'Stáž/Prax'))}"></span></p>
+            </div>
+            <div class="card-footer">
+                <a th:href="@{/employees/list}" class="btn btn-secondary">Späť na zoznam</a>
+                <form th:action="@{/employees/form/update}" method="get" class="d-inline">
+                    <input type="hidden" name="employeeId" th:value="${employee.id}"/>
+                    <button type="submit" class="btn btn-warning" title="Update">
+                        <i class="fas fa-edit"></i> Upraviť
+                    </button>
+                </form>
+                <form th:action="@{/employees/delete}" method="get" class="d-inline">
+                    <input type="hidden" name="employeeId" th:value="${employee.id}"/>
+                    <button type="submit" class="btn btn-danger" title="Delete"
+                            onclick="return confirm('Ste si istý, že chcete odstrániť tohto zamestnanca?');">
+                        <i class="fas fa-trash"></i> Vymazať
+                    </button>
+                </form>
+            </div>
         </div>
-        <div class="card-footer">
-            <a th:href="@{/employees/list}" class="btn btn-secondary">Späť na zoznam</a>
-<!--            <form th:action="@{/employees/form/update}" method="get" class="d-inline">-->
-<!--                <input type="hidden" name="employeeId" th:value="${employee.id}"/>-->
-<!--                <button type="submit" class="btn btn-warning" title="Update">-->
-<!--                    <i class="fas fa-edit"></i> Upraviť-->
-<!--                </button>-->
-<!--            </form>-->
-            <form th:action="@{/employees/delete}" method="get" class="d-inline">
-                <input type="hidden" name="employeeId" th:value="${employee.id}"/>
-                <button type="submit" class="btn btn-danger" title="Delete"
-                        onclick="return confirm('Ste si istý, že chcete odstrániť tohto zamestnanca?');">
-                    <i class="fas fa-trash"></i> Vymazať
-                </button>
-            </form>
-        </div>
-    </div>
-
+<!--    </form>-->
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"

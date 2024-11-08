@@ -92,13 +92,15 @@
 
 <div class="container">
     <div class="header">
-        <h2>UBIAN - Add New Employee</h2>
+        <h2 th:text="${employee.id} != 0 ? 'UBIAN - Upraviť existujúceho Employee' : 'UBIAN - Pridať nového Employee'"></h2>
     </div>
 
     <form th:action="@{/employees/save}" th:object="${employee}" method="post">
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Employee Information</h5>
+
+                <input type="hidden" th:field="*{id}"/>
 
                 <div class="row mb-3">
                     <div class="col-md-6">
@@ -150,11 +152,11 @@
                         <label class="form-label">Employment Type</label>
                         <div class="radio-group">
                             <div>
-                                <input type="radio" class="form-check-input" id="fullTime" th:field="*{fullTime}" value="1">
+                                <input type="radio" class="form-check-input" id="fullTime" th:field="*{fullTime}" value="0">
                                 <label class="form-check-label" for="fullTime">Full-Time</label>
                             </div>
                             <div>
-                                <input type="radio" class="form-check-input" id="partTime" th:field="*{fullTime}" value="0">
+                                <input type="radio" class="form-check-input" id="partTime" th:field="*{fullTime}" value="1">
                                 <label class="form-check-label" for="partTime">Part-Time</label>
                             </div>
                             <div>
@@ -173,7 +175,8 @@
 
             <div class="card-footer">
                 <a th:href="@{/employees/list}" class="btn btn-secondary">Back to List</a>
-                <button type="submit" class="btn btn-primary">Add Employee</button>
+                <button type="submit" class="btn btn-primary"
+                        th:text="${employee.id} != 0 ? 'Upraviť Employee' : 'Pridať Employee'"></button>
             </div>
         </div>
     </form>
